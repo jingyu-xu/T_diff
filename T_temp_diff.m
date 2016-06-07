@@ -82,7 +82,7 @@ set(hcb,'YTick',[0,1,2,3,4,5,6,7,8],'YTickLabel',{'Air','Skin','Gland-1','Gland-
 % create temperature model
 tumor_on = 0; tumor_depth = 10;  tumor_radius = 7; Tambient = 27; Tart = 37; tum_y_cen = 90; tum_z_cen = floor(s3_ss/2);tum_x_cen = 20 + tumor_depth;
 % muscle_wall = 154; skin_start = 0; % can't remember why I put this in
-[T_3d_nom,tissue_3d_nom] = gen_breast_therm_model(model,s1_ss,s2_ss,s3_ss,tumor_on,tumor_depth,tumor_radius,Tambient,Tart,muscle_wall,skin_start,tum_x_cen,tum_y_cen,tum_z_cen);
+[T_3d_nom,tissue_3d_nom] = gen_breast_therm_model_old(model,s1_ss,s2_ss,s3_ss,tumor_on,tumor_depth,tumor_radius,Tambient,Tart,muscle_wall,skin_start,tum_x_cen,tum_y_cen,tum_z_cen);
 figure; contourf(T_3d_nom(:,:,floor(s3_ss/2)));
 colorbar;
 xlabel('Distance (mm)','FontSize',14); ylabel('Distance (mm)','FontSize',14);
@@ -91,15 +91,15 @@ title('Normal Temperature Profile (\circC)','FontSize',14);
 % Generate temperature anomalies with radius = 10
 tumor_on = 1; tum_y_cen = 90; tum_z_cen = floor(s3_ss/2);
 tumor_radius = 7; tumor_depth = 10; tum_x_cen = 20 + tumor_depth;
-[T_3d_abn1,tissue_3d_abn1] = gen_breast_therm_model(model,s1_ss,s2_ss,s3_ss,tumor_on,tumor_depth,tumor_radius,Tambient,Tart,muscle_wall,skin_start,tum_x_cen,tum_y_cen,tum_z_cen);
+[T_3d_abn1,tissue_3d_abn1] = gen_breast_therm_model_old(model,s1_ss,s2_ss,s3_ss,tumor_on,tumor_depth,tumor_radius,Tambient,Tart,muscle_wall,skin_start,tum_x_cen,tum_y_cen,tum_z_cen);
 tumor_radius = 7; tumor_depth = 40; tum_x_cen = 20 + tumor_depth; tumor_on = 1; tum_y_cen = 50; tum_z_cen = floor(s3_ss/2);
-[T_3d_abn2,tissue_3d_abn2] = gen_breast_therm_model(model,s1_ss,s2_ss,s3_ss,tumor_on,tumor_depth,tumor_radius,Tambient,Tart,muscle_wall,skin_start,tum_x_cen,tum_y_cen,tum_z_cen);
+[T_3d_abn2,tissue_3d_abn2] = gen_breast_therm_model_old(model,s1_ss,s2_ss,s3_ss,tumor_on,tumor_depth,tumor_radius,Tambient,Tart,muscle_wall,skin_start,tum_x_cen,tum_y_cen,tum_z_cen);
 tumor_radius = 7; tumor_depth = 40; tum_x_cen = 20 + tumor_depth; tumor_on = 1; tum_y_cen = 130; tum_z_cen = floor(s3_ss/2);
-[T_3d_abn3,tissue_3d_abn3] = gen_breast_therm_model(model,s1_ss,s2_ss,s3_ss,tumor_on,tumor_depth,tumor_radius,Tambient,Tart,muscle_wall,skin_start,tum_x_cen,tum_y_cen,tum_z_cen);
+[T_3d_abn3,tissue_3d_abn3] = gen_breast_therm_model_old(model,s1_ss,s2_ss,s3_ss,tumor_on,tumor_depth,tumor_radius,Tambient,Tart,muscle_wall,skin_start,tum_x_cen,tum_y_cen,tum_z_cen);
 tumor_radius = 7; tumor_depth = 40; tum_x_cen = 20 + tumor_depth; tumor_on = 1; tum_y_cen = 90; tum_z_cen = floor(s3_ss/2);
-[T_3d_abn4,tissue_3d_abn4] = gen_breast_therm_model(model,s1_ss,s2_ss,s3_ss,tumor_on,tumor_depth,tumor_radius,Tambient,Tart,muscle_wall,skin_start,tum_x_cen,tum_y_cen,tum_z_cen);
+[T_3d_abn4,tissue_3d_abn4] = gen_breast_therm_model_old(model,s1_ss,s2_ss,s3_ss,tumor_on,tumor_depth,tumor_radius,Tambient,Tart,muscle_wall,skin_start,tum_x_cen,tum_y_cen,tum_z_cen);
 tumor_radius = 7; tumor_depth = 70; tum_x_cen = 20 + tumor_depth; tumor_on = 1; tum_y_cen = 90; tum_z_cen = floor(s3_ss/2);
-[T_3d_abn5,tissue_3d_abn5] = gen_breast_therm_model(model,s1_ss,s2_ss,s3_ss,tumor_on,tumor_depth,tumor_radius,Tambient,Tart,muscle_wall,skin_start,tum_x_cen,tum_y_cen,tum_z_cen);
+[T_3d_abn5,tissue_3d_abn5] = gen_breast_therm_model_old(model,s1_ss,s2_ss,s3_ss,tumor_on,tumor_depth,tumor_radius,Tambient,Tart,muscle_wall,skin_start,tum_x_cen,tum_y_cen,tum_z_cen);
 
 
 figure; contourf(T_3d_abn1(:,:,floor(s3_ss/2)));
